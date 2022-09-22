@@ -126,13 +126,8 @@ def isSatisfiable(formula):
     oneT = False
     oneF = False
     for i in listAllPossibleValues(varlist):
-        if oneT == True and oneF == True:
-            return True
-        else:
-            if formula.evaluate(dict(i)) == True:
-                oneT = True
-            if formula.evaluate(dict(i)) == False:
-                oneF = True 
+        if formula.evaluate(dict(i)) == True:
+            return True 
     return False 
 
 def isContradiction(formula):
