@@ -115,10 +115,10 @@ print( truthTable(myformula) )
 
 
 def isTautology(formula):
-     varlist = list(formula.variables())
-     for i in listAllPossibleValues(varlist):
-         if formula.evaluate(dict(i)) == False:
-             return False
+    varlist = list(formula.variables())
+    for i in listAllPossibleValues(varlist):
+        if formula.evaluate(dict(i)) == False:
+            return False
     return True 
          
 def isSatisfiable(formula):
