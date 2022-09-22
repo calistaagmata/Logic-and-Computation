@@ -123,9 +123,6 @@ def isTautology(formula):
          
 def isSatisfiable(formula):
     varlist = list(formula.variables())
-
-def isContradiction(formula):
-    varlist = list(formula.variables())
     oneT = False
     oneF = False
     for i in listAllPossibleValues(varlist):
@@ -137,5 +134,13 @@ def isContradiction(formula):
             if formula.evaluate(dict(i)) == False:
                 oneF = True 
     return False 
+
+def isContradiction(formula):
+    varlist = list(formula.variables())
+    for i in listAllPossibleValues(varlist):
+        if formula.evaluate(dict(i)) == True:
+            return False
+    return True 
+    
         
     
